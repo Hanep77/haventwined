@@ -34,7 +34,7 @@ php artisan serve
 npm install
 ```
 create .env file
-VITE_URL_API=http://localhost:8000 or something  
+VITE_API_URL=http://localhost:8000 or something  
 ```sh
 npm run dev
 ```
