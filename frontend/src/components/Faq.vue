@@ -1,28 +1,15 @@
 <script setup lang="ts">
 import { ref } from "vue";
 
-const faqs = [
-  {
-    question: "Bagaimana cara memesan tenant untuk acara saya?",
-    answer: "Anda bisa mencari dan memilih tenant melalui platform Haventwined, lalu melakukan pemesanan secara langsung."
-  },
-  {
-    question: "Apakah ada biaya tambahan untuk menggunakan Haventwined?",
-    answer: "Tidak, Haventwined gratis untuk digunakan oleh penyelenggara dan tenant. Namun, beberapa fitur premium mungkin tersedia di masa depan."
-  },
-  {
-    question: "Bagaimana jika tenant yang saya pesan membatalkan di menit terakhir?",
-    answer: "Kami menyarankan untuk selalu berkomunikasi dengan tenant. Jika terjadi pembatalan, Anda bisa mencari alternatif tenant melalui platform kami."
-  },
-  {
-    question: "Apakah saya bisa mengubah atau membatalkan pesanan tenant?",
-    answer: "Ya, Anda bisa mengelola pemesanan melalui dashboard admin Anda."
-  },
-  {
-    question: "Bagaimana cara menghubungi tim support Haventwined?",
-    answer: "Anda bisa menghubungi kami melalui email support@haventwined.com atau melalui live chat di platform."
-  }
-];
+export interface FaqInterface {
+  content_id: number,
+  question: string,
+  answer: string,
+}
+
+defineProps<{
+  faqs?: FaqInterface[]
+}>();
 
 const openIndex = ref<number | null>(null);
 

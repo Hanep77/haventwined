@@ -1,19 +1,15 @@
 <script setup lang="ts">
 import logo from "@/assets/img/logo-haventwined.png"
-import { ref } from "vue";
 
-const contacts = ref([
-  {
-    name: "Email",
-    label: "support@haventwined.com",
-    link: "https://mailto:support@haventwined.com",
-  },
-  {
-    name: "Whatsapp",
-    label: "+62 822-9944-9708",
-    link: "https://wa.me/6282299449708",
-  }
-])
+export interface ContactInterface {
+  platform: string,
+  text: string,
+  link: string,
+}
+
+defineProps<{
+  contacts?: ContactInterface[]
+}>();
 </script>
 
 <template>
@@ -29,8 +25,8 @@ const contacts = ref([
             <h2 class="text-xl font-bold text-white mb-2">Hubungi Kami</h2>
             <div class="text-lg flex flex-col gap-2">
               <div v-for="contact in contacts">
-                <p class="font-semibold text-xl">{{ contact.name }}</p>
-                <a :href="contact.link" class="hover:underline">{{ contact.label }}</a>
+                <p class="font-semibold text-xl">{{ contact.platform }}</p>
+                <a :href="contact.link" class="hover:underline">{{ contact.text }}</a>
               </div>
             </div>
           </div>
