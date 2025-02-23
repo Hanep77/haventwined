@@ -1,3 +1,5 @@
+landing page responsif dan admin panel untuk Haventwined, dibuat menggunakan vuejs dan laravel dengan bantual filament untuk admin panel
+
 ## setup backend
 
 ```sh
