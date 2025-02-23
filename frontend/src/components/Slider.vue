@@ -13,6 +13,7 @@ const props = defineProps<{
 }>();
 
 const images = computed(() => [...(props.hero_images ?? []), ...(props.hero_images ?? [])]);
+const apiUrl = import.meta.env.VITE_API_URL;
 
 const swiperOptions = ref({
   direction: "vertical",
@@ -30,7 +31,7 @@ const swiperOptions = ref({
   <div class="flex justify-center items-center">
     <Swiper v-bind="swiperOptions" :modules="[Autoplay]" class="h-96 md:h-[500px]">
       <SwiperSlide v-for="(image, index) in images" :key="index">
-        <img :src="'http://localhost:8000/storage/' + image.image" alt="Slide Image"
+        <img :src="apiUrl + '/storage/' + image.image" alt="Slide Image"
           class="transition-all duration-500 w-full h-full md:h-60 object-cover shadow-lg" />
       </SwiperSlide>
     </Swiper>
