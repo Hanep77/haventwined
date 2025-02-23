@@ -3,14 +3,10 @@
 ```sh
 composer install
 ```
-copy .env.example to .env
-then change this
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE={your_db_name}
-DB_USERNAME=root
-DB_PASSWORD=
+- copy .env.example to .env
+- then change this
+- DB_CONNECTION=mysql
+- DB_DATABASE={your_db_name}
 
 ```sh
 php artisan key:generate
